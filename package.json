@@ -1,0 +1,45 @@
+{
+    "name": "TweetMap",
+    "version": "0.1.0",
+    "author": "Martin Micunda <martinmicunda@hotmail.com>",
+    "description": "A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map",
+    "homepage": "TODO: add live url",
+    "private": true,
+    "scripts": {
+        "start": "node ./server/app/server.js",
+        "test": "TODO: add test command",
+        "deploy": "TODO: add deploy command",
+        "postinstall": "bower install"
+    },
+    "main": "./server/app/server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/martinmicunda/tweet-map"
+    },
+    "bugs": {
+        "url": "https://github.com/martinmicunda/tweet-map/issues"
+    },
+    "keywords": [
+        "tweet",
+        "map"
+    ],
+    "dependencies": {
+        "express": "3.3.5",
+        "socket.io": "0.9.16"
+    },
+    "devDependencies": {
+        "grunt": "0.4.2",
+        "grunt-bower-install": "0.7.0",
+        "bower": "1.2.7",
+        "open": "0.0.4",
+        "grunt-contrib-watch": "0.5.3"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/martinmicunda/tweet-map/master/LICENSE"
+    },
+    "engines": {
+        "node": ">=0.8",
+        "npm": "1.1.x"
+    }
+}
