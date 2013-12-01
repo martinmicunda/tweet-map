@@ -1,0 +1,12 @@
+{
+    "app": {
+        "name": "TweetMap",
+        "version": "0.1.0"
+    },
+    "twitter": {
+        "consumerKey": "R7GORTWnt3STLSddbOgX5A",
+        "consumerSecret": "tzBo1qXzA4TwIfzkSW92rbVYvvTqElqyYiCxehvLI",
+        "accessTokenKey": "1400946476-Sve9bbhvYr9w722N0tWaocf9oaLIvz4CUfnbyMr",
+        "accessTokenSecret": "QRxMubjEuxSmk3bnSlbA3SCiWP5jaF9wb0BSGbY7gJu1w"
+    }
+}

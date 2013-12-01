@@ -1,0 +1,161 @@
+.map {
+    height: 400px;
+    width: 800px;
+}
+body {
+    background: url('./img/banner.jpg') top center;
+    background-size: cover;
+    color: #ffffff;
+}
+/*********************************************************************************/
+/* Header  & Footer                                                              */
+/*********************************************************************************/
+
+header, footer, aside
+{
+    position: relative;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.10);
+    padding: 0.75em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+aside {margin: 0; padding-bottom: 0;}
+header .inner, footer .inner, aside .inner
+{
+    position: relative;
+    height: 60px;
+    background-image: -moz-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+    background-image: -webkit-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+    background-image: -o-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+    background-image: -ms-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+    background-image: linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.5), inset 0px 0px 0px 2px rgba(255,255,255,0.075), inset 0px 2px 1px 0px rgba(255,255,255,0.2);
+}
+aside .inner {height: auto;}
+header h1
+{
+    position: absolute;
+    left: 1.75em;
+    top: 50%;
+    margin-top: -0.65em;
+    font-size: 1.5em;
+    color: #fff;
+}
+header h5
+{
+    float: right;
+    margin-top: 22px;
+    margin-right: 15px;
+}
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+
+#nav
+{
+    position: absolute;
+    right: 2em;
+    top: 0;
+    line-height: 5.5em;
+}
+
+#nav ul li
+{
+    float: left;
+    padding: 0 0.8em 0 0.8em;
+}
+
+#nav ul li a
+{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.95em;
+    letter-spacing: 0.075em;
+    padding: 0.5em 0.8em 0.5em 0.8em;
+    border-radius: 6px;
+    outline: 0;
+}
+
+#nav ul li.active a,
+#nav ul li.current_page_item a
+{
+    background: rgba(0,0,0,0.15);
+    box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,0.025), 1px 1px 0px 0px rgba(255,255,255,0.025);
+}
+
+#nav ul li:last-child
+{
+    padding-right: 0;
+}
+
+#nav > ul > li > ul
+{
+    display: none;
+}
+
+/*********************************************************************************/
+/* Buttons                                                                       */
+/*********************************************************************************/
+.button
+{
+    display: inline-block;
+    background: #23749f;
+    background-image: -moz-linear-gradient(top, #3b91b6, #23749f);
+    background-image: -webkit-linear-gradient(top, #3b91b6, #23749f);
+    background-image: -o-linear-gradient(top, #3b91b6, #23749f);
+    background-image: -ms-linear-gradient(top, #3b91b6, #23749f);
+    background-image: linear-gradient(top, #3b91b6, #23749f);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 0px 1px #005173, inset 0px 2px 1px 0px #76c0e0, inset 0px 0px 0px 2px #4d98bb;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.95em;
+    letter-spacing: 0.075em;
+    outline: 0;
+    float: right;
+    margin-right: 20px;
+    margin-top: 14px;
+}
+
+.button:hover
+{
+    background-image: -moz-linear-gradient(top, #4ba1c6, #23749f);
+    background-image: -webkit-linear-gradient(top, #4ba1c6, #23749f);
+    background-image: -o-linear-gradient(top, #4ba1c6, #23749f);
+    background-image: -ms-linear-gradient(top, #4ba1c6, #23749f);
+    background-image: linear-gradient(top, #4ba1c6, #23749f);
+}
+
+
+.sidebar{
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+.tweet-wrapper {
+    border-bottom: 1px solid #999999;
+    padding: 9px 12px;
+}
+.tweet-wrapper img {
+    border-radius: 6px;
+}
+.content{
+    margin-left: 58px;
+    color: #fff;
+}
+.content p {
+    text-align: justify;
+}
+.date {
+    color: #999999;
+}
+
+ul{margin:0; padding: 0;}
+ul li {list-style: none outside none;}
