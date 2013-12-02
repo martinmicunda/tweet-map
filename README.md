@@ -3,7 +3,7 @@
 TweetMap
 =========
 
-A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map.
+A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map in real time. This is a node.js application that uses twitter public stream api with a filter criteria.
 
 [Click here to see it in action!](http://tweet-map.herokuapp.com/)
 
@@ -18,10 +18,10 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
 + [Bootstrap 3](http://getbootstrap.com/)
 + [GruntJS](http://gruntjs.com/)
 + [Bower](http://bower.io/)
-+ [Twitter API](https://dev.twitter.com/)
-+ [Google Map API](https://developers.google.com/maps/)
++ [Twitter API v1.1](https://dev.twitter.com/)
++ [Google Map API v3](https://developers.google.com/maps/)
 
-## Installation
+## Installation & Configuration
 
 ### Platform & tools
 
@@ -46,7 +46,19 @@ Run the following commands to download TweetMap app:
     npm install
     ```
 
-(Note1: If you are getting error with github try this "git config --global url."https://".insteadOf git://" Note2: Make sure all 3rd dependencies from package.json and bower.json are isntalled on your local machine")
+(Note1: If you are getting error with github try this "git config --global url."https://".insteadOf git://".
+ Note2: Make sure all 3rd dependencies from package.json and bower.json are isntalled on your local machine")
+
+### Configure Twitter API
+Go to [dev.twitter.com](https://dev.twitter.com/apps/new) and register an application. A set of keys will be created for you and you have to add them to [development.json](https://github.com/martinmicunda/tweet-map/blob/master/server/src/app/config/env/development.json) file.
+``` javascript
+"twitter": {
+    "consumerKey": "",
+    "consumerSecret": "",
+    "accessTokenKey": "",
+    "accessTokenSecret": ""
+}
+```
 
 ## Running App
 
