@@ -28,7 +28,7 @@ module.exports = function(io) {
             io.sockets.volatile.emit('tweets', {
                 user: tweet.user.screen_name,
                 text: tweet.text,
-                image: tweet.profile_image_url,
+                image: tweet.user.profile_image_url,
                 geo : geo,
                 latitude: latitude,
                 longitude: longitude

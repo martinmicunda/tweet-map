@@ -1,3 +1,4 @@
+
 Tweet = function (user, text, image, geo, latitude, longitude) {
     this.user = user;
     this.text = text;

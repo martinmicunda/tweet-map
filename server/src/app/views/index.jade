@@ -1,33 +1,38 @@
 doctype 5
 html(ng-app="TweetMap")
-    include ./includes/head
+    head
+        title TweetMap
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+
+        include ./includes/head
+
     body
-        div(ng-view)
-        div(class="container" ng-controller="HomeCtrl")
-            header.row
+    div(ng-view)
+    div(class="container" ng-controller="HomeCtrl")
+        header.row
+            .inner
+                h1 TweetMap Viewer
+                button(class="button btn-sm" type="button" ng-click="clearAllTweets()") Clear all tweets
+                h5 Tweets total: {{totalTweets}}
+        section.row
+            article.col-lg-9.col-xs-12.col-sm-9
                 .inner
-                    h1 TweetMap Viewer
-                    button(class="button btn-sm" type="button" ng-click="clearAllTweets()") Clear all tweets
-                    h5 Tweets total: {{tweetCounter}}
-            section.row
-                article.col-xs-12.col-sm-9
-                    div(ng-repeat="tweetMarker in tweetMarkers" ui-map-marker="tweetMarkers[$index]" ui-event="{'map-click': 'openMarkerInfo(tweetMarker)'}")
+                    div(ng-repeat="tweetMarker in tweetMarkers" ui-map-marker="tweetMarkers[$index]" ui-event="{'map-click': 'openMarkerInfo(tweetMarker)'}" class="tweet-marker")
                     div(ui-map-info-window="myInfoWindow")
                         .info
                             img(ng-src="{{image}}" align="left")
                             a(href="http://twitter.com/{{user}}" target="_blank"): | @ {{user}}
                             | : {{text}}
                     div(id="map_canvas" ui-map="tweetMap" class="map" ui-options="mapOptions")
-                aside.col-xs-6.col-sm-3
-                    .inner
-                        ul.sidebar
-                            li(ng-repeat="tweet in tweets" class="tweet-wrapper")
-                                img(ng-src="#{{tweet.image}}" class="pull-left")
-                                .content
-                                    a(ng-href="http://twitter.com/#{{tweet.user}}" target="_blank"): | @ {{tweet.user}}
-                                    p {{tweet.text}}
-            footer.row
+            aside.col-lg-3.col-xs-12.col-sm-3
                 .inner
-                    small &copy; {{copyrightDate | date:'yyyy'}}
-                        a(href="http://www.martinm.net" target="_blank") Martin Micunda
-    include ./includes/foot
+                    ul.sidebar
+                        li(ng-repeat="tweet in tweets" class="tweet-wrapper")
+                            img(ng-src="{{tweet.image}}" class="pull-left")
+                            .content
+                                a(ng-href="http://twitter.com/{{tweet.user}}" target="_blank"): | @ {{tweet.user}}
+                                p {{tweet.text}}
+        footer.row
+            .inner.text-center
+                small.container &copy; Copyright {{copyrightDate | date:'yyyy'}} &nbsp;
+                    a(href="http://www.martinm.net" target="_blank") Martin Micunda

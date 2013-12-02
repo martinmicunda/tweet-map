@@ -1,23 +1,35 @@
-head
-  title TweetMap
-  meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+//CSS 3rd parties
+<!-- bower:css -->
+<link rel="stylesheet" href="client/src/lib/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+//JS 3rd parties
+<!-- bower:js -->
+<script src="client/src/lib/jquery/jquery.js"></script>
+<script src="client/src/lib/angular/angular.js"></script>
+<script src="client/src/lib/angular-route/angular-route.js"></script>
+<script src="client/src/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="client/src/lib/angular-ui-utils/modules/event/event.js"></script>
+<script src="client/src/lib/angular-ui-map/src/map.js"></script>
+<!-- endbower -->
 
-  //CSS 3rd parties
-  <!-- bower:css -->
-  <link rel="stylesheet" href="client/src/lib/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
+//CSS app
+link(rel='stylesheet', href='client/src/assets/css/style.css')
 
-  //JS 3rd parties
-  <!-- bower:js -->
-  <script src="client/src/lib/jquery/jquery.js"></script>
-  <script src="client/src/lib/angular/angular.js"></script>
-  <script src="client/src/lib/angular-route/angular-route.js"></script>
-  <script src="client/src/lib/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="client/src/lib/angular-ui-utils/modules/event/event.js"></script>
-  <script src="client/src/lib/angular-ui-map/src/map.js"></script>
-  <!-- endbower -->
+script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
 
-  //CSS app
-  link(rel='stylesheet', href='client/src/assets/style.css')
+//Socket.io
+script(type='text/javascript', src='/socket.io/socket.io.js')
+
+//Application scripts
+script(type='text/javascript', src='client/src/app/app.js')
+script(type='text/javascript', src='client/src/app/models/tweetModel.js')
+script(type='text/javascript', src='client/src/app/services/socketService.js')
+
+//if (req.host='localhost')
+    //Livereload script rendered
+    script(type='text/javascript', src='http://localhost:35729/livereload.js')
+
+//if lt IE 9
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 
 

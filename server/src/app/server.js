@@ -18,7 +18,7 @@ var express = require('express'),
 require('./config/express')(app);
 
 // routes settings
-require('./config/routes')(app, io);
+require('./config/routes')(app);
 
 // twitter settings
 require('./config/twitter')(io);

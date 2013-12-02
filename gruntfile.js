@@ -18,10 +18,7 @@ module.exports = function(grunt) {
         src: {
             js: ['./client/src/app/**/*.js'],
             jade: ['./server/src/app/view/**/*.jade'],
-//            html: ['./src/index.html'],
-//            tpl: ['./src/app/**/*.tpl.html'],
             css: ['./client/src/assets/*.css'],
-//            specs: ['test/unit/*.spec.js'],
             scenarios: ['test/client/e2e/*.scenario.js']
         },
         watch: {
@@ -32,21 +29,6 @@ module.exports = function(grunt) {
             files:['<%= src.js %>', '<%= src.css %>', '<%= src.jade %>'],
             tasks:['default','timestamp']
         }
-//        karma: {
-//            unit: { configFile: './test/client/config/unit.js' },
-//            e2e: { configFile: './test/client/config/e2e.js' }
-////          watch: { options: karmaConfig('./test/config/unit.js', { singleRun:false, autoWatch: true}) }
-//        },
-//        html2js: {
-//            app: {
-//                options: {
-//                    base: 'client/app'
-//                },
-//                src: ['<%= src.tpl %>'],
-//                dest: '<%= distdir %>/templates/app.js',
-//                module: 'templates.app'
-//            }
-//        }
     });
 
     // Print a timestamp (useful for when watching)
@@ -56,5 +38,4 @@ module.exports = function(grunt) {
 
     // Default task
     grunt.registerTask('default', []);
-//    grunt.registerTask('test', ['karma:unit']);
 };

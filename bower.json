@@ -3,8 +3,7 @@
     "private": true,
     "version": "0.1.0",
     "ignore": [
-        "jquery",
-        "**/*bootstrap.js"
+        "dist/js/bootstrap.js"
     ],
     "dependencies": {
         "angular": "1.2.3",

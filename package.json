@@ -6,7 +6,7 @@
     "homepage": "TODO: add live url",
     "private": true,
     "scripts": {
-        "start": "node ./server/app/server.js",
+        "start": "node ./app.js",
         "test": "TODO: add test command",
         "deploy": "TODO: add deploy command",
         "postinstall": "bower install"
@@ -28,7 +28,9 @@
         "underscore": "1.5.2",
         "socket.io": "0.9.16",
         "ntwitter": "0.5.0",
-        "jade": "0.35.0"
+        "jade": "0.35.0",
+        "stylus": "0.41.0",
+        "nib": "1.0.1"
     },
     "devDependencies": {
         "grunt": "0.4.2",

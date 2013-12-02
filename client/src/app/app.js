@@ -4,7 +4,7 @@ function initCall() {
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
 
-angular.module('TweetMap', ['ngRoute', 'ui.map'])
+angular.module('TweetMap', ['ngRoute', 'ui.map', 'SocketService'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -15,16 +15,8 @@ angular.module('TweetMap', ['ngRoute', 'ui.map'])
             });
     }])
 
-    .controller('HomeCtrl', ['$scope', 'socket', function ($scope, socket) {
-        var map
-            , markersArray = []
-            , aTweet
-            , focusLocation
-            , totalNogeoTweets = 0
-            , totalgeoTweets = 0
-            , limitTweetsTable = 100
-            , limitMarkers = 1000
-            , totalTweets = 0;
+    .controller('HomeCtrl', ['$scope', 'socket', '$http', function ($scope, socket, $http) {
+        var LIMIT_TWEETS = 10;
 
         // A google.maps namespaced objects for ease-of-access
         var MarkerImage = google.maps.MarkerImage;
@@ -36,11 +28,17 @@ angular.module('TweetMap', ['ngRoute', 'ui.map'])
         $scope.copyrightDate = new Date();
         $scope.tweets = [];
         $scope.tweetMarkers = [];
-        $scope.tweetCounter = 0;
+        $scope.totalTweets = 0;
+
         socket.on('tweets', function(tweet) {
-            $scope.tweets.unshift(new Tweet(tweet.user, tweet.text, tweet.image, tweet.geo, tweet.latitude, tweet.longitude));
-            addMarker(tweet);
-            $scope.tweetCounter++;
+            if($scope.totalTweets >= LIMIT_TWEETS) {
+                // disconnect socket connection when total of irish tweets reach 1000 tweets
+                socket.disconnect();
+            } else {
+                $scope.tweets.unshift(new Tweet(tweet.user, tweet.text, tweet.image, tweet.geo, tweet.latitude, tweet.longitude));
+                addMarker(tweet);
+                $scope.totalTweets++;
+            }
         });
 
         //Map setup
@@ -48,31 +46,6 @@ angular.module('TweetMap', ['ngRoute', 'ui.map'])
             zoom: 8,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: new LatLng(53.34, -6.26) // focus on Ireland (Dublin)
-        };
-
-        var marker_for = function(lat, lng, user, image) {
-            var marker, shadow_image, user_image;
-            user_image = new MarkerImage(image, new Size(48, 48));
-            shadow_image = new MarkerImage('/map_shadow.png', null, null, new Point(18, 26));
-            marker = new Marker({
-                position: new LatLng(lat, lng),
-                draggable: false,
-                animation: google.maps.Animation.DROP,
-                map: $scope.tweetMap,
-                title: user
-                //icon: user_image,
-                //shadow: shadow_image
-            });
-            return marker;
-        };
-
-        var addMarker = function(tweet) {
-            var marker = marker_for(tweet.latitude, tweet.longitude, tweet.user, tweet.image);
-            var pp = {
-                marker: marker,
-                tweet: tweet
-            }
-            $scope.tweetMarkers.push(marker);
         };
 
         $scope.openMarkerInfo = function(marker) {
@@ -87,30 +60,34 @@ angular.module('TweetMap', ['ngRoute', 'ui.map'])
         $scope.clearAllTweets = function() {
             $scope.tweets.length = 0;
             $scope.tweetMarkers.length = 0;
-            $scope.tweetCounter = 0;
+            $scope.totalTweets = 0;
+            angular.element(".tweet-marker").remove();
         }
+
+        var marker_for = function(lat, lng, user, image) {
+            var marker, shadow_image, user_image;
+            user_image = new MarkerImage(image, new Size(48, 48));
+            shadow_image = new MarkerImage('/map_shadow.png', null, null, new Point(18, 26));
+            marker = new Marker({
+                position: new LatLng(lat, lng),
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                map: $scope.tweetMap,
+                title: user
+//                icon: user_image,
+//                shadow: shadow_image
+            });
+            return marker;
+        };
+
+        var addMarker = function(tweet) {
+            var marker = marker_for(tweet.latitude, tweet.longitude, tweet.user, tweet.image);
+            var pp = {
+                marker: marker,
+                tweet: tweet
+            }
+            $scope.tweetMarkers.push(marker);
+        };
     }])
 
-    .factory('socket', ['$rootScope', function($rootScope) {
-        var socket = io.connect();
-        return {
-            on: function(eventName, callback) {
-                socket.on(eventName, function() {
-                    var args = arguments;
-                    $rootScope.$apply(function() {
-                        callback.apply(socket, args);
-                    });
-                });
-            },
-            emit: function(eventName, data, callback) {
-                socket.emit(eventName, data, function() {
-                    var args = arguments;
-                    $rootScope.$apply(function() {
-                        if(callback) {
-                            callback.apply(socket, args);
-                        }
-                    });
-                });
-            }
-        };
-    }]);
+
