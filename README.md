@@ -18,6 +18,8 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
 + [Bootstrap 3](http://getbootstrap.com/)
 + [GruntJS](http://gruntjs.com/)
 + [Bower](http://bower.io/)
++ [Twitter API](https://dev.twitter.com/)
++ [Google Map API](https://developers.google.com/maps/)
 
 ## Installation
 
@@ -33,9 +35,7 @@ You need to install Node.js and then the development tools. Node.js comes with a
 
 ### App
 Run the following commands to download TweetMap app:
-
     ```
-    # Download the code
     git clone https://github.com/martinmicunda/tweet-map.git
     ```
 
@@ -46,7 +46,7 @@ Run the following commands to download TweetMap app:
     npm install
     ```
 
-(Note: If you are getting error with github try this "git config --global url."https://".insteadOf git://")
+(Note1: If you are getting error with github try this "git config --global url."https://".insteadOf git://" Note2: Make sure all 3rd dependencies from package.json and bower.json are isntalled on your local machine")
 
 ## Running App
 
@@ -57,7 +57,7 @@ Run the following commands to download TweetMap app:
     node app.js
     ```
 
-* Browse to the application at [http://localhost:3000]
+* Browse to the application at [http://localhost:3000](http://localhost:3000)
 
 ## Author
 
