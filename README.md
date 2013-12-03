@@ -36,6 +36,12 @@ You need to install Node.js and then the development tools. Node.js comes with a
     npm install -g grunt-cli
     ```
 
+* [Install Bower](http://http://bower.io/) as global npm modules (requires node.js version >= 0.8.0):
+
+    ```
+    npm install -g bower
+    ```
+    
 ### App
 Run the following commands to download TweetMap app:
     ```
