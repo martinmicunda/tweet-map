@@ -25,14 +25,16 @@ module.exports = function(io) {
                 latitude = tweet.geo.coordinates[0];
                 longitude = tweet.geo.coordinates[1];
             }
-            io.sockets.volatile.emit('tweets', {
-                user: tweet.user.screen_name,
-                text: tweet.text,
-                image: tweet.user.profile_image_url,
-                geo : geo,
-                latitude: latitude,
-                longitude: longitude
-            });
+            if(tweet.user != undefined) {
+                io.sockets.volatile.emit('tweets', {
+                    user: tweet.user.screen_name,
+                    text: tweet.text,
+                    image: tweet.user.profile_image_url,
+                    geo : geo,
+                    latitude: latitude,
+                    longitude: longitude
+                });
+            }
         });
     });
 };

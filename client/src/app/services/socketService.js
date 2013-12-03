@@ -2,7 +2,7 @@
 
 angular.module('SocketService', [])
 
-    .factory('socket', ['$rootScope', '$timeout', function($rootScope,$timeout) {
+    .factory('socket', ['$rootScope', function($rootScope) {
         var socket = io.connect();
         return {
             on: function(eventName, callback) {

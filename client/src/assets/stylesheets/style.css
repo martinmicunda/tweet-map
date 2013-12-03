@@ -1,0 +1,117 @@
+/*
+ * Require for angular-ui-map
+ */
+.map {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: url("../img/banner.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+}
+header,
+footer,
+aside,
+article {
+  position: relative;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  padding: 0.75em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+aside,
+article {
+  margin: 0;
+}
+header .inner,
+footer .inner,
+aside .inner,
+article .inner {
+  position: relative;
+  height: 60px;
+  background-image: -moz-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+  background-image: -webkit-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+  background-image: -o-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+  background-image: -ms-linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+  background-image: linear-gradient(top, rgba(59,59,59,0.9), rgba(38,38,38,0.9));
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.5), inset 0px 0px 0px 2px rgba(255,255,255,0.075), inset 0px 2px 1px 0px rgba(255,255,255,0.2);
+}
+aside .inner {
+  height: auto;
+}
+article .inner {
+  height: 400px;
+  padding: 12px;
+}
+header h1 {
+  position: absolute;
+  left: 20px;
+  font-size: 1.5em;
+}
+header h5 {
+  float: right;
+  margin-top: 24px;
+  margin-right: 15px;
+}
+.button {
+  display: inline-block;
+  background: #23749f;
+  background-image: -moz-linear-gradient(top, #3b91b6, #23749f);
+  background-image: -webkit-linear-gradient(top, #3b91b6, #23749f);
+  background-image: -o-linear-gradient(top, #3b91b6, #23749f);
+  background-image: -ms-linear-gradient(top, #3b91b6, #23749f);
+  background-image: linear-gradient(top, #3b91b6, #23749f);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 0px 1px #005173, inset 0px 2px 1px 0px #76c0e0, inset 0px 0px 0px 2px #4d98bb;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95em;
+  letter-spacing: 0.075em;
+  outline: 0;
+  float: right;
+  margin-right: 20px;
+  margin-top: 16px;
+}
+.button:hover {
+  background-image: -moz-linear-gradient(top, #4ba1c6, #23749f);
+  background-image: -webkit-linear-gradient(top, #4ba1c6, #23749f);
+  background-image: -o-linear-gradient(top, #4ba1c6, #23749f);
+  background-image: -ms-linear-gradient(top, #4ba1c6, #23749f);
+  background-image: linear-gradient(top, #4ba1c6, #23749f);
+}
+.sidebar {
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tweet-wrapper {
+  border-bottom: 1px solid #999;
+  padding: 12px;
+}
+.tweet-wrapper img {
+  border-radius: 8px;
+}
+.content {
+  margin-left: 58px;
+}
+.content p {
+  text-align: justify;
+}
+.date {
+  color: #999;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none outside none;
+}

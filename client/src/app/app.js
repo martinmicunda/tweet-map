@@ -1,5 +1,7 @@
 'use strict';
-function initCall() {
+
+// load angular app after the Google Maps API
+function onGoogleReady() {
     console.log("Google maps api initialized.");
     angular.bootstrap(document.getElementById("map"), ['doc.ui-map']);
 }
@@ -9,20 +11,17 @@ angular.module('TweetMap', ['ngRoute', 'ui.map', 'SocketService'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'HomeCtrl'
+                controller: 'TweetCtrl'
             }).otherwise({
                 redirectTo: '/'
             });
     }])
 
-    .controller('HomeCtrl', ['$scope', 'socket', '$http', function ($scope, socket, $http) {
-        var LIMIT_TWEETS = 10;
+    .controller('TweetCtrl', ['$scope', 'socket', '$http', function ($scope, socket, $http) {
+        var LIMIT_TWEETS = 1000;
 
         // A google.maps namespaced objects for ease-of-access
-        var MarkerImage = google.maps.MarkerImage;
         var Marker = google.maps.Marker;
-        var Size = google.maps.Size;
-        var Point = google.maps.Point;
         var LatLng = google.maps.LatLng;
 
         $scope.copyrightDate = new Date();
@@ -32,18 +31,16 @@ angular.module('TweetMap', ['ngRoute', 'ui.map', 'SocketService'])
 
         socket.on('tweets', function(tweet) {
             if($scope.totalTweets >= LIMIT_TWEETS) {
-                // disconnect socket connection when total of irish tweets reach 1000 tweets
+                // disconnect socket connection when total of Irish tweets reach 1000 tweets
                 socket.disconnect();
             } else {
-                $scope.tweets.unshift(new Tweet(tweet.user, tweet.text, tweet.image, tweet.geo, tweet.latitude, tweet.longitude));
-                addMarker(tweet);
-                $scope.totalTweets++;
+                addTweet(tweet);
             }
         });
 
         //Map setup
         $scope.mapOptions = {
-            zoom: 8,
+            zoom: 7,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: new LatLng(53.34, -6.26) // focus on Ireland (Dublin)
         };
@@ -61,31 +58,30 @@ angular.module('TweetMap', ['ngRoute', 'ui.map', 'SocketService'])
             $scope.tweets.length = 0;
             $scope.tweetMarkers.length = 0;
             $scope.totalTweets = 0;
-            angular.element(".tweet-marker").remove();
+            // TODO: (martin) add code here that will remove markers from google map when user click "Clear all tweet" button. Find how angular can access google map and remove markers from GUI
         }
 
+        // TODO: (martin) move below functions to a service layer
+        var addTweet = function(tweet) {
+            $scope.tweets.unshift(new Tweet(tweet.user, tweet.text, tweet.image, tweet.geo, tweet.latitude, tweet.longitude));
+            addMarker(tweet);
+            $scope.totalTweets++;
+        }
+
+        // TODO: (martin) not happy with this as I can't pass User details to the marker - "find better solution for this"
         var marker_for = function(lat, lng, user, image) {
-            var marker, shadow_image, user_image;
-            user_image = new MarkerImage(image, new Size(48, 48));
-            shadow_image = new MarkerImage('/map_shadow.png', null, null, new Point(18, 26));
-            marker = new Marker({
+            var marker = new Marker({
                 position: new LatLng(lat, lng),
                 draggable: false,
                 animation: google.maps.Animation.DROP,
                 map: $scope.tweetMap,
                 title: user
-//                icon: user_image,
-//                shadow: shadow_image
             });
             return marker;
         };
 
         var addMarker = function(tweet) {
             var marker = marker_for(tweet.latitude, tweet.longitude, tweet.user, tweet.image);
-            var pp = {
-                marker: marker,
-                tweet: tweet
-            }
             $scope.tweetMarkers.push(marker);
         };
     }])

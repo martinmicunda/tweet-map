@@ -1,4 +1,7 @@
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+'use strict';
+
+// check the env and if doesn't exist then set to development by default
+var env = process.env.NODE_ENV != undefined ? process.env.NODE_ENV : process.env.NODE_ENV = 'development';
 
 /**
  * Module dependencies.
@@ -31,7 +34,7 @@ app.configure('development', function(){
     server.listen(port, 'localhost', 511, function() {
         // Once the server is listening automatically open up a browser
         var open = require('open');
-        //open('http://localhost:' + port + '/');
+        open('http://localhost:' + port + '/');
     });
     console.info(config.app.name + ' app started on port: ' + port + ' - environment: ' + env);
 });

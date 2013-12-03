@@ -18,6 +18,7 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
 + [Bootstrap 3](http://getbootstrap.com/)
 + [GruntJS](http://gruntjs.com/)
 + [Bower](http://bower.io/)
++ [Socket.IO](http://socket.io/)
 + [Twitter API v1.1](https://dev.twitter.com/)
 + [Google Map API v3](https://developers.google.com/maps/)
 
