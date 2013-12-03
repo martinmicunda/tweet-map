@@ -24,6 +24,9 @@
         "map"
     ],
     "dependencies": {
+        "grunt": "0.4.2",
+        "bower": "1.2.7",
+        "grunt-bower-install": "0.7.0",
         "express": "3.3.5",
         "underscore": "1.5.2",
         "socket.io": "0.9.16",
@@ -33,10 +36,7 @@
         "nib": "1.0.1"
     },
     "devDependencies": {
-        "grunt": "0.4.2",
-        "grunt-bower-install": "0.7.0",
         "grunt-contrib-watch": "0.5.3",
-        "bower": "1.2.7",
         "open": "0.0.4"
     },
     "license": {
