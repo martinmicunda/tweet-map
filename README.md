@@ -7,6 +7,8 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
 
 [Click here to see it in action!](http://tweet-map.herokuapp.com/)
 
+![TweetMap screenshot](screenshot.png "TweetMap screenshot")
+
 ## Technologies Used
 + [AngularJS](http://angularjs.org/)
 + [NodeJS](http://nodejs.org/)
