@@ -1,6 +1,4 @@
-[![Dependency Status](https://david-dm.org/martinmicunda/tweet-map.png)](https://david-dm.org/martinmicunda/tweet-map) [![devDependency Status](https://david-dm.org/martinmicunda/tweet-map/dev-status.png)](https://david-dm.org/martinmicunda/tweet-map#info=devDependencies)
-
-TweetMap
+TweetMap [![Dependency Status](https://david-dm.org/martinmicunda/tweet-map.png)](https://david-dm.org/martinmicunda/tweet-map) [![devDependency Status](https://david-dm.org/martinmicunda/tweet-map/dev-status.png)](https://david-dm.org/martinmicunda/tweet-map#info=devDependencies)
 =========
 
 A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map in real time. This is a node.js application that uses twitter public stream api with a filter criteria.
@@ -10,19 +8,25 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
 ![TweetMap screenshot](screenshot.png "TweetMap screenshot")
 
 ## Technologies Used
-+ [AngularJS](http://angularjs.org/)
-+ [NodeJS](http://nodejs.org/)
-+ [ExpressJS](http://expressjs.com/)
-+ [Jade](http://jade-lang.com/)
-+ [HTML5](http://www.w3.org/TR/2011/WD-html5-20110525/)
-+ [CSS3](http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/)
-+ [Stylus](http://learnboost.github.io/stylus/)
-+ [Bootstrap 3](http://getbootstrap.com/)
-+ [GruntJS](http://gruntjs.com/)
-+ [Bower](http://bower.io/)
-+ [Socket.IO](http://socket.io/)
-+ [Twitter API v1.1](https://dev.twitter.com/)
-+ [Google Map API v3](https://developers.google.com/maps/)
+
+* **Client Side:**
+    * [AngularJS](http://angularjs.org/)
+    * [HTML5](http://www.w3.org/TR/2011/WD-html5-20110525/)
+    * [CSS3](http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/)
+    * [Bootstrap 3](http://getbootstrap.com/)
+    * [Google Map API v3](https://developers.google.com/maps/)
+
+* **Server Side:**
+    * [NodeJS](http://nodejs.org/)
+    * [ExpressJS](http://expressjs.com/)
+    * [Jade](http://jade-lang.com/)
+    * [Stylus](http://learnboost.github.io/stylus/)
+    * [Socket.IO](http://socket.io/)
+    * [Twitter API v1.1](https://dev.twitter.com/)
+
+* **Development & Deployment Tools:**
+    * [Grunt](http://gruntjs.com/)
+    * [Bower](http://bower.io/)
 
 ## Installation & Configuration
 
@@ -36,6 +40,12 @@ You need to install Node.js and then the development tools. Node.js comes with a
     npm install -g grunt-cli
     ```
 
+* [Install Bower](http://http://bower.io/) as global npm modules (requires node.js version >= 0.8.0):
+
+    ```
+    npm install -g bower
+    ```
+    
 ### App
 Run the following commands to download TweetMap app:
     ```
@@ -49,8 +59,8 @@ Run the following commands to download TweetMap app:
     npm install
     ```
 
-(Note1: If you are getting error with github try this "git config --global url."https://".insteadOf git://".
- Note2: Make sure all 3rd dependencies from package.json and bower.json are isntalled on your local machine")
+*Note1: If you are getting error with github try this "git config --global url."https://".insteadOf git://".* <br />
+*Note2: Make sure all 3rd dependencies from package.json and bower.json are isntalled on your local machine.*
 
 ### Configure Twitter API
 Go to [dev.twitter.com](https://dev.twitter.com/apps/new) and register an application. A set of keys will be created for you and you have to add them to [development.json](https://github.com/martinmicunda/tweet-map/blob/master/server/src/app/config/env/development.json) file.
@@ -78,3 +88,24 @@ Go to [dev.twitter.com](https://dev.twitter.com/apps/new) and register an applic
 
 **Martin Micunda**
 + <http://martinm.net>
+ 
+## The MIT License (MIT)
+
+Copyright (c) 2013 Martin Micunda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
