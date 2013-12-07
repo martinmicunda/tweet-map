@@ -9,7 +9,7 @@
         "start": "node ./app.js",
         "test": "TODO: add test command",
         "deploy": "TODO: add deploy command",
-        "postinstall": "bower install"
+        "postinstall": "bower install && grunt bower-install"
     },
     "main": "./server/app/server.js",
     "repository": {
@@ -28,12 +28,12 @@
         "bower": "1.2.7",
         "grunt-bower-install": "0.7.0",
         "express": "3.3.5",
-        "underscore": "1.5.2",
         "socket.io": "0.9.16",
         "ntwitter": "0.5.0",
         "jade": "0.35.0",
         "stylus": "0.41.0",
-        "nib": "1.0.1"
+        "nib": "1.0.1",
+        "nconf": "0.6.9"
     },
     "devDependencies": {
         "grunt-contrib-watch": "0.5.3",

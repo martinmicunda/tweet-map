@@ -1,7 +1,6 @@
 {
-    "app": {
-        "name": "TweetMap",
-        "version": "0.1.0"
+    "express": {
+        "port": 3000
     },
     "twitter": {
         "consumerKey": "",

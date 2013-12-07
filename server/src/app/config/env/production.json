@@ -1,6 +1,11 @@
 {
-    "app": {
-        "name": "TweetMap",
-        "version": "0.1.0"
+    "express": {
+        "port": 5000
+    },
+    "twitter": {
+        "consumerKey": "",
+        "consumerSecret": "",
+        "accessTokenKey": "",
+        "accessTokenSecret": ""
     }
 }

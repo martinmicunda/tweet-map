@@ -1,17 +1,16 @@
 /**
  * Module dependencies.
  */
-var twitter = require('ntwitter'),
-    config = require('./config.js');
+var twitter = require('ntwitter');
 
-module.exports = function(io) {
+module.exports = function(io, config) {
 
     // setup API
     var twit = new twitter({
-        consumer_key: config.twitter.consumerKey,
-        consumer_secret: config.twitter.consumerSecret,
-        access_token_key: config.twitter.accessTokenKey,
-        access_token_secret: config.twitter.accessTokenSecret
+        consumer_key: config.get("twitter:consumerKey"),
+        consumer_secret: config.get("twitter:consumerSecret"),
+        access_token_key: config.get("twitter:accessTokenKey"),
+        access_token_secret: config.get("twitter:accessTokenSecret")
     });
 
     // setup filter location criteria (Ireland - Dublin)

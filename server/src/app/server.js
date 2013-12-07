@@ -1,8 +1,5 @@
 'use strict';
 
-// check the env and if doesn't exist then set to development by default
-var env = process.env.NODE_ENV != undefined ? process.env.NODE_ENV : process.env.NODE_ENV = 'development';
-
 /**
  * Module dependencies.
  */
@@ -18,32 +15,22 @@ var express = require('express'),
 */
 
 // express settings
-require('./config/express')(app);
+require('./config/express')(app, config);
 
 // routes settings
 require('./config/routes')(app);
 
 // twitter settings
-require('./config/twitter')(io);
+require('./config/twitter')(io, config);
 
-var port = process.env.PORT || config.port;
-
-// dev environments
-app.configure('development', function(){
-    // Start up the server on the port specified in the config
-    server.listen(port, 'localhost', 511, function() {
+// Start up the server on the port specified in the config
+server.listen(config.get("express:port"), function() {
+    if(config.get("env") != 'development') {
         // Once the server is listening automatically open up a browser
         var open = require('open');
-        open('http://localhost:' + port + '/');
-    });
-    console.info(config.app.name + ' app started on port: ' + port + ' - environment: ' + env);
-});
-
-// production environments
-app.configure('production', function(){
-    app.listen(port, function() {
-        console.info(config.app.name + ' app started on port: ' + port  + ' - with environment: ' + env);
-    });
+        open('http://localhost:' + config.get("express:port") + '/');
+    }
+    console.info(config.get("app:name") + ' app started on port: ' + config.get("express:port")  + ' - with environment: ' + config.get("env"));
 });
 
 //expose app

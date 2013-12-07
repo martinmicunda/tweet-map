@@ -17,7 +17,7 @@ angular.module('TweetMap', ['ngRoute', 'ui.map', 'SocketService'])
             });
     }])
 
-    .controller('TweetCtrl', ['$scope', 'socket', '$http', function ($scope, socket, $http) {
+    .controller('TweetCtrl', ['$scope', 'socket', function ($scope, socket) {
         var LIMIT_TWEETS = 1000;
 
         // A google.maps namespaced objects for ease-of-access
