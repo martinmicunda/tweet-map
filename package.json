@@ -1,12 +1,12 @@
 {
-    "name": "TweetMap",
+    "name": "tweet-map",
     "version": "0.1.0",
     "author": "Martin Micunda <martinmicunda@hotmail.com>",
     "description": "A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map",
-    "homepage": "TODO: add live url",
+    "homepage": "http://tweet-map.herokuapp.com",
     "private": true,
     "scripts": {
-        "start": "node ./app.js",
+        "start": "node app.js",
         "test": "TODO: add test command",
         "deploy": "TODO: add deploy command",
         "postinstall": "bower install && grunt bower-install"
@@ -36,8 +36,18 @@
         "nconf": "0.6.9"
     },
     "devDependencies": {
+        "grunt-contrib-jshint": "0.7.2",
         "grunt-contrib-watch": "0.5.3",
-        "open": "0.0.4"
+        "open": "0.0.4",
+        "karma-firefox-launcher": "0.1.0",
+        "karma-chrome-launcher": "0.1.0",
+        "karma-junit-reporter": "0.1.0",
+        "karma-jasmine": "0.1.3",
+        "grunt-karma": "0.7.1",
+        "protractor": "0.14.0",
+        "grunt-shell": "0.6.1",
+        "grunt-protractor-runner": "0.1.11",
+        "grunt-connect": "0.2.0"
     },
     "license": {
         "type": "MIT",

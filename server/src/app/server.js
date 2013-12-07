@@ -25,7 +25,7 @@ require('./config/twitter')(io, config);
 
 // Start up the server on the port specified in the config
 server.listen(config.get("express:port"), function() {
-    if(config.get("env") != 'development') {
+    if(config.get("env") === 'development') {
         // Once the server is listening automatically open up a browser
         var open = require('open');
         open('http://localhost:' + config.get("express:port") + '/');

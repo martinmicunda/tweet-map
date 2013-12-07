@@ -15,6 +15,21 @@ module.exports = function(app, config) {
     app.set('views', config.get("appRoot") + 'server/src/app/views');
     app.set('view engine', 'jade');
 
+    // Middleware to compile `styl` files to `css`.
+    // For example, `client/src/assets/stylesheets/stylus` will be compiled to `client/src/assets/stylesheets/css`
+//    app.use(stylus.middleware({
+//        // Source directory
+//        src: config.get("appRoot") + 'client/src/assets/stylesheets/stylus',
+//        // Destination directory
+//        dest: config.get("appRoot") + 'client/src/assets/stylesheets/css',
+//        // Compile function
+//        compile: function(str, path) {
+//            return stylus(str)
+//                .set('filename', path)
+//                .set('compress', true);
+//        }
+//    }));
+
     //TODO: (martin) the static directory should be '/client' but for some reason 'grunt bower-install' generate wrong directory into head.jade (figure out why this is happening)
     //app.use(express.static(config.root + '/client'));
     app.use(express.static(config.get("appRoot")));

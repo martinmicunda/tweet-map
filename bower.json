@@ -1,9 +1,13 @@
 {
-    "name": "TweetMap",
+    "name": "tweet-map",
     "private": true,
     "version": "0.1.0",
     "ignore": [
-        "dist/js/bootstrap.js"
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
     ],
     "dependencies": {
         "angular": "1.2.3",
@@ -11,5 +15,8 @@
         "bootstrap": "3.0.2",
         "angular-ui-map": "0.0.2",
         "angular-ui-utils": "0.0.4"
+    },
+    "devDependencies": {
+        "angular-mocks": "1.2.3"
     }
 }
