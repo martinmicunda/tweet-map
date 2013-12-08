@@ -1,48 +1,35 @@
 language: node_js
 node_js:
-  - "0.10"
-
+- '0.10'
 notifications:
   email:
     recipients:
-      - martinmicunda@hotmail.com
+    - martinmicunda@hotmail.com
     on_success: never
     on_failure: always
-
-# set sauce labs credentials
 env:
   global:
-    - secure: 'IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0='
-    - secure: 'DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI='
-    - secure: JUzqyX3ZQrF7s2d/WhYYdqFcguZ+LqLP8ya4beH/RP3PiOMTgSK0On3H0C0ot4oMEhPkyfF2dU7gkz4QkNP+PkGekZ8Y5oOsEUWa/c4BPrwGETGjQ6KfmETu3duA4OpaKTcGb0uVbymiS2X72WutELDnXYm/I40mwg4sSuDBx3Q=
-
-# starts xvfb on display port :99.0 (virtual Firefox)
+  - secure: IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0=
+  - secure: DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI=
+  - secure: ZGwSzVDLRkT0FrHYkeigGnhSgKzJIeBH5lbRDV+Aq+1RazuZ/M9xsOPBl6BTrPVp0XipA8g2j3mbTmysoe6g9OphTRdSlQ6rS+IXA5N/S9RlTDCf6eR4khqK4OQFov/2QmCUpN684d85MfkNCQ4oartKtBhejnG8erCjRXgKgug=
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
-# install dependencies necessary to run this build
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
-  - npm install -g grunt-cli@0.1.x karma@0.10.x protractor@0.14.x
-  - npm install --quiet
-
-# configure Travis CI to Start Sauce Connect and start application
+- npm install -g grunt-cli@0.1.x karma@0.10.x protractor@0.14.x
+- npm install --quiet
 before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
-  - node app.js &
-  - sleep 3 # give server some time to start
-
+- curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
+- node app.js &
+- sleep 3
 script:
-  - grunt test:unit
-  #- grunt protractor
-  #- grunt test:e2e
-
+- grunt test:unit
 after_success:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:tweet-map.git
-  - echo "Host heroku.com" >> ~/.ssh/config
-  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "   CheckHostIP no" >> ~/.ssh/config
-  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - yes | heroku keys:add
-  - yes | git push heroku master
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:tweet-map.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- yes | heroku keys:add
+- yes | git push heroku master
