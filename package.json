@@ -9,7 +9,7 @@
         "start": "node app.js",
         "test": "TODO: add test command",
         "deploy": "TODO: add deploy command",
-        "postinstall": "node ./node_modules/bower/bin/bower install"
+        "postinstall": "node node_modules/bower/bin/bower install"
     },
     "main": "./server/app/server.js",
     "repository": {
