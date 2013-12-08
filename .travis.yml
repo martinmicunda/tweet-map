@@ -14,6 +14,7 @@ env:
   global:
     - secure: 'IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0='
     - secure: 'DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI='
+    - secure: "FWHg7YWLSsTSdTjLOZjFa730BUmxQQqg0zck5QRC5R6wLWZjSLFAcgpTp6DPz0PWinCf/FyGsP7SsqXegVsq/qfHIDM5M7CNAvC1JzW0rncW8XT70jBcorxlUoOsEWUXlJVfaicCpYBMRps32Adiy8r+LKcutXIRmnbkAdtsrzg="
 
 # starts xvfb on display port :99.0 (virtual Firefox)
 before_install:
@@ -40,8 +41,6 @@ after_success:
   # deploy app to Heroku
   deploy:
     provider: heroku
-    api_key:
-      - secure: "FWHg7YWLSsTSdTjLOZjFa730BUmxQQqg0zck5QRC5R6wLWZjSLFAcgpTp6DPz0PWinCf/FyGsP7SsqXegVsq/qfHIDM5M7CNAvC1JzW0rncW8XT70jBcorxlUoOsEWUXlJVfaicCpYBMRps32Adiy8r+LKcutXIRmnbkAdtsrzg="
     app: tweet-map
     run:
       - restart
