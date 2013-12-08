@@ -37,9 +37,9 @@ script:
   #- grunt protractor
   #- grunt test:e2e
 
-after_success:
-  # deploy app to Heroku
-  deploy:
-    provider: heroku
-    app: tweet-map
-    api_key: "6d77cb39-0928-4739-a3c2-8e83f7a19252"
+
+# deploy app to Heroku
+deploy:
+  provider: heroku
+  app: tweet-map
+  api_key: "6d77cb39-0928-4739-a3c2-8e83f7a19252"
