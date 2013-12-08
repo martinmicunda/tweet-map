@@ -24,9 +24,17 @@ A Node.js webapp which generates a real-time heatmap of the most recent 1000 Iri
     * [Socket.IO](http://socket.io/)
     * [Twitter API v1.1](https://dev.twitter.com/)
 
-* **Development & Deployment Tools:**
+* **Development & Deployment:**
     * [Grunt](http://gruntjs.com/)
     * [Bower](http://bower.io/)
+    * [Travis CI](https://travis-ci.org/)
+
+* **Test:**
+    * [Jasmine](http://pivotal.github.io/jasmine/)
+    * [Karma](http://karma-runner.github.io/)
+    * [Protractor](http://github.com/angular/protractor/)
+    * [Selenium](http://www.seleniumhq.org/)
+    * [Sauce Lab](http://saucelabs.com/)
 
 ## Installation & Configuration
 
