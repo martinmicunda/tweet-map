@@ -42,5 +42,5 @@ deploy:
   provider: heroku
   app: tweet-map
   api_key:
-    - secure: 'JUzqyX3ZQrF7s2d/WhYYdqFcguZ+LqLP8ya4beH/RP3PiOMTgSK0On3H0C0ot4oMEhPkyfF2dU7gkz4QkNP+PkGekZ8Y5oOsEUWa/c4BPrwGETGjQ6KfmETu3duA4OpaKTcGb0uVbymiS2X72WutELDnXYm/I40mwg4sSuDBx3Q='
+    secure: ahPrWflfxAP1VEJf4Ud+4i4UHPof7fdu9It/hXddMSprzQEXU2+KHLr0VbHfVHmmndDyhGIqMtaZLt/IIb5sY2ffyPnP0md362W15o/FGQxlh4tzsgZ0NYkdnovNQNLoP716/GMIZlYgDZpm7C5OO+uGCq5lTya+h1suFaGopwM=
 
