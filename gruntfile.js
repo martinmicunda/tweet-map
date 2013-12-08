@@ -174,7 +174,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('protractor', ['shell:protractor_install','shell:protractor_start']);
 
-    //installation-relatedg
+    //installation-related
     grunt.registerTask('install', ['shell:protractor_install']);
     grunt.registerTask('update', ['shell:npm_install', 'concat']);
 };
