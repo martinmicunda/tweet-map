@@ -17,4 +17,7 @@ before_script:
   - node app.js &
   - sleep 3 # give server some time to start
 
-script: grunt test:unit
+script:
+  - grunt test:unit
+  - grunt protractor
+  - grunt test:e2e
