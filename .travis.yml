@@ -9,15 +9,36 @@ notifications:
     on_success: never
     on_failure: always
 
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+# set sauce labs credentials
+env:
+  global:
+    - secure: 'IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0='
+    - secure: 'DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI='
+
+# starts xvfb on display port :99.0 (virtual Firefox)
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
+# install dependencies necessary to run this build
+install:
   - npm install -g grunt-cli@0.1.x karma@0.10.x protractor@0.14.x
   - npm install --quiet
+
+# configure Travis CI to Start Sauce Connect and start application
+before_script:
+  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
   - node app.js &
   - sleep 3 # give server some time to start
 
 script:
   - grunt test:unit
-  - grunt protractor
-  - grunt test:e2e
+  #- grunt protractor
+  #- grunt test:e2e
+
+after_success:
+  # deploy app to Heroku
+  deploy:
+    provider: heroku
+    app: tweet-map
+    api_key: ! 'NZejvHBs7R4bKyguAwxf9gR+cuc2R6a1wnlvek/tEDpqGYXatlyei9q1vL89nUE2vSimqHcu8EXAISmB/z7c4N5A58eVpyuehDdSVc6ID71xzdKrYeQp4BO0I/BB3PHe62BGI51iUNUkZnAXb65juKXyIVgcY9Kuj+0BzIh5LJU='

@@ -156,6 +156,32 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+        saucelabs: {
+            options: {
+                reporter: 'Spec',
+                sauceTunnelId: process.env.TRAVIS_JOB_NUMBER,
+                sauceSession: 'Grunt Mocha Protractor',
+                browsers: [
+                    {
+                        base: 'SauceLabs',
+                        browserName: 'Chrome',
+                        platform: 'Windows 7'
+                    },
+                    {
+                        base: 'SauceLabs',
+                        browserName: 'Firefox'
+                    },
+                    {
+                        base: 'SauceLabs',
+                        browserName: 'Internet Explorer',
+                        version: '10'
+                    }
+                ]
+            },
+            files: {
+                src: 'test/*.js'
+            }
         }
     });
 
