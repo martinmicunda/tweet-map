@@ -43,3 +43,5 @@ after_success:
     api_key:
       secure: YN/kPNyZYlLk63U1vF8MLBcP6rb16IMf30M4nYIVSoFFC7EN5kYioDC83b7AYOM13FbG1SQfTct3gCvCNAWmDVoorE2kku6kXEfTAZre8DGoi12kjexr8GQ9kJWif0KTqugZCxLFBalrTvrpcSZsHR4uZqGPAebChcqZDs/PAUQ=
     app: tweet-map
+    run:
+      - restart
