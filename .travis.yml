@@ -1,44 +1,30 @@
 language: node_js
 node_js:
-  - "0.10"
-
+- '0.10'
 notifications:
   email:
     recipients:
-      - martinmicunda@hotmail.com
+    - martinmicunda@hotmail.com
     on_success: never
     on_failure: always
-
-# set sauce labs credentials
 env:
   global:
-    - secure: 'IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0='
-    - secure: 'DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI='
-    - secure: 'L4ie/bPr1uGj7wFnHlNYF7P3Ipb1psnPCtpIFZHhuElti51ym90naB8hz3b1gGI4Us30Pl7cXL678QSn2EtJa+irxlbU1ah2VVzIU2AG75jmdGl8/SoYiRvGOElQK+TvIcICVQc6wSJhomSRfBnYpytke6ZKnqERtJyUO8LHmTk='
-
-# starts xvfb on display port :99.0 (virtual Firefox)
+  - secure: IndJScC1KSZ7Cc1XohiKiwaCnQFLT02DBaliSLpFHpD6rrcI3P+bw4VmqpzqvnH7jCaYFCGudqzgKtdZgF0mNJ2Uo7VKzybiPtNUx4jpgowG0bJPCLqkBOVkQJUOkX1hmFdletQRIlcCTgsnXihD42pmTZnDsfxC+0h2FUmJSc0=
+  - secure: DMW803T7RWE25ldhX73E/tqSWAZMaGUsd1dUbcxmXnU7OxpDPRSej2qtFJFHaYQi1inIL6zaKWD7Q5Mt6U5iueNvKtuDEabwjHw1Q2iwH/jLOKf0AtVvpQQJTBSIAzCDdqKTIwAnkFc5qRUuB1hphlrRhu7DVVZCVHZfuMIpAWI=
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
-# install dependencies necessary to run this build
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
-  - npm install -g grunt-cli@0.1.x karma@0.10.x protractor@0.14.x
-  - npm install --quiet
-
-# configure Travis CI to Start Sauce Connect and start application
+- npm install -g grunt-cli@0.1.x karma@0.10.x protractor@0.14.x
+- npm install --quiet
 before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
-  - node app.js &
-  - sleep 3 # give server some time to start
-
+- curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
+- node app.js &
+- sleep 3
 script:
-  - grunt test:unit
-  #- grunt protractor
-  #- grunt test:e2e
-
-
-# deploy app to Heroku
+- grunt test:unit
 deploy:
   provider: heroku
   app: tweet-map
+  api_key:
+    secure: ORLh6OeTVqwzxHJGN/czBVAXRf2S64oO3Beo+st6f9Qd8qxaO6w2T7khxHVhYEiG+/ihoi2A5FaD7CkfuKRNoxTCNjkGEGZKNXV5fnAdd+GMKQLloODid/9CdnxWdX3mJrKe03SsUInl4I241Jfl+zHhmFl/Tg+f6z03GC9zFdc=
