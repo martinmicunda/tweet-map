@@ -23,8 +23,9 @@ before_script:
 - sleep 3
 script:
 - grunt test:unit
+
 deploy:
   provider: heroku
   app: tweet-map
   api_key:
-    secure: ! "ORLh6OeTVqwzxHJGN/czBVAXRf2S64oO3Beo+st6f9Qd8qxaO6w2T7khxHVhYEiG+/ihoi2A5FaD7CkfuKRNoxTCNjkGEGZKNXV5fnAdd+GMKQLloODid/9CdnxWdX3mJrKe03SsUInl4I241Jfl+zHhmFl/Tg+f6z03GC9zFdc="
+  - secure: ! 'ORLh6OeTVqwzxHJGN/czBVAXRf2S64oO3Beo+st6f9Qd8qxaO6w2T7khxHVhYEiG+/ihoi2A5FaD7CkfuKRNoxTCNjkGEGZKNXV5fnAdd+GMKQLloODid/9CdnxWdX3mJrKe03SsUInl4I241Jfl+zHhmFl/Tg+f6z03GC9zFdc='
