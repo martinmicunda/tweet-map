@@ -18,3 +18,4 @@ node_modules
 client/src/lib/
 _doc/
 build/
+_heroku_deployment/
