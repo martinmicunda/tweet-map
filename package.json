@@ -34,10 +34,10 @@
         "stylus": "0.41.0",
         "nib": "1.0.1",
         "nconf": "0.6.9",
-        "load-grunt-tasks": "0.2.0",
-        "open": "0.0.4"
+        "load-grunt-tasks": "0.2.0"
     },
     "devDependencies": {
+        "open": "0.0.4",
         "karma-firefox-launcher": "0.1.0",
         "karma-chrome-launcher": "0.1.0",
         "karma-junit-reporter": "0.1.0",
