@@ -1,7 +1,7 @@
 TweetMap [![Build Status](https://secure.travis-ci.org/martinmicunda/tweet-map.png)](http://travis-ci.org/martinmicunda/tweet-map) [![Dependency Status](https://david-dm.org/martinmicunda/tweet-map.png)](https://david-dm.org/martinmicunda/tweet-map) [![devDependency Status](https://david-dm.org/martinmicunda/tweet-map/dev-status.png)](https://david-dm.org/martinmicunda/tweet-map#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 =========
 
-A Node.js webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map in real time. This is a node.js application that uses twitter public stream api with a filter criteria.
+A Node.js, ExpressJS and AngularJS responsive webapp which generates a real-time heatmap of the most recent 1000 Irish tweets on a google map in real time. This is a node.js application that uses twitter public stream api with a filter criteria.
 
 [Click here to see it in action!](http://tweet-map.herokuapp.com/)
 
