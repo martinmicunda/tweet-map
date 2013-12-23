@@ -17,3 +17,4 @@ node_modules
 .idea/
 client/src/lib/
 _doc/
+build/

@@ -33,11 +33,10 @@
         "jade": "0.35.0",
         "stylus": "0.41.0",
         "nib": "1.0.1",
-        "nconf": "0.6.9"
+        "nconf": "0.6.9",
+        "load-grunt-tasks": "0.2.0"
     },
     "devDependencies": {
-        "grunt-contrib-jshint": "0.7.2",
-        "grunt-contrib-watch": "0.5.3",
         "open": "0.0.4",
         "karma-firefox-launcher": "0.1.0",
         "karma-chrome-launcher": "0.1.0",
@@ -47,12 +46,22 @@
         "protractor": "0.14.0",
         "grunt-shell": "0.6.1",
         "grunt-protractor-runner": "0.1.11",
-        "grunt-connect": "0.2.0"
+        "grunt-connect": "0.2.0",
+        "grunt-contrib-watch": "0.5.3",
+        "grunt-contrib-clean": "0.5.0",
+        "grunt-contrib-concat": "0.3.0",
+        "grunt-contrib-uglify": "0.2.7",
+        "grunt-contrib-jshint": "0.7.2",
+        "grunt-contrib-csslint": "0.2.0",
+        "grunt-contrib-imagemin": "0.4.0",
+        "jshint-stylish": "0.1.4"
     },
-    "license": {
-        "type": "MIT",
-        "url": "https://github.com/martinmicunda/tweet-map/master/LICENSE"
-    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/martinmicunda/tweet-map/master/LICENSE"
+        }
+    ],
     "engines": {
         "node": ">=0.8",
         "npm": "1.1.x"
