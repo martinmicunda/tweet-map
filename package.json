@@ -27,17 +27,17 @@
         "grunt": "0.4.2",
         "bower": "1.2.8",
         "grunt-bower-install": "0.7.0",
-        "express": "3.4.6",
+        "express": "3.4.7",
         "socket.io": "0.9.16",
         "ntwitter": "0.5.0",
         "jade": "0.35.0",
         "stylus": "0.41.0",
         "nib": "1.0.1",
         "nconf": "0.6.9",
-        "load-grunt-tasks": "0.2.0"
+        "load-grunt-tasks": "0.2.0",
+        "open": "0.0.4"
     },
     "devDependencies": {
-        "open": "0.0.4",
         "karma-firefox-launcher": "0.1.0",
         "karma-chrome-launcher": "0.1.0",
         "karma-junit-reporter": "0.1.0",
