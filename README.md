@@ -93,12 +93,8 @@ Go to [dev.twitter.com](https://dev.twitter.com/apps/new) and register an applic
 
 * Browse to the application at [http://localhost:3000](http://localhost:3000)
 
-## Author
-
-**Martin Micunda**
-+ <http://martinm.net>
- 
-## The MIT License (MIT)
+## License
+The MIT License (MIT)
 
 Copyright (c) 2013 Martin Micunda
 
