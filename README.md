@@ -31,7 +31,7 @@ A Node.js, ExpressJS and AngularJS responsive webapp which generates a real-time
     * [Travis CI](https://travis-ci.org/)
 
 * **Test:**
-    * [Jasmine](http://pivotal.github.io/jasmine/)
+    * [Jasmine](https://jasmine.github.io/)
     * [Karma](http://karma-runner.github.io/)
     * [Protractor](http://github.com/angular/protractor/)
     * [Selenium](http://www.seleniumhq.org/)
